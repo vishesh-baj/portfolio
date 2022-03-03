@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 2em;
+}
+
+nav .logo i {
+  font-size: 2em;
+  color: #ffafcc;
+  cursor: pointer;
+}
+
+nav .pallette-btn i {
+  font-size: 1.8em;
+  color: teal;
+  cursor: pointer;
+}
+
+nav .pallete-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 20%;
+  height: 100vh;
+  background-color: #fec89a;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  border-top-left-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+nav .pallete-menu .close-menu-btn {
+  font-size: 1.2em;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+}
+
+nav .pallete-menu .colors-div {
+  width: 100%;
+  height: 70vh;
+  background: white;
+}
+
+.pallete-menu-toggle {
+  -webkit-transform: translateX(0%) !important;
+          transform: translateX(0%) !important;
+}
+/*# sourceMappingURL=main.css.map */
