@@ -110,18 +110,65 @@ main {
     font-weight: 100;
     color: #f72585;
     animation: transition-left 0.8s forwards;
-    transform: translateX(-100%);
-    opacity: 0;
+    // transform: translateX(-100%);
+    // opacity: 0;
   }
   p {
     margin-left: 10px;
     animation: transition-left 1.3s forwards;
   }
+
+  // add todo
+
+  .add-todo {
+    width: 100%;
+    height: auto;
+    // background-color: #2a9d8f;
+    border: 1px solid #f72585;
+    border-radius: 20px;
+    margin-top: 2em;
+    padding: 0.8em;
+    animation: transition-right forwards 1.2s;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    h2 {
+      font-weight: 100;
+    }
+
+    i {
+      font-size: x-large;
+      font-weight: 100;
+    }
+
+    &:hover {
+      i {
+        transition: all ease-in-out 0.5s;
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
 
+// Keyframes
 @keyframes transition-left {
   from {
     transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes transition-right {
+  from {
+    transform: translateX(100%);
     opacity: 0;
   }
   to {

@@ -140,15 +140,47 @@ main .main-heading {
   color: #f72585;
   -webkit-animation: transition-left 0.8s forwards;
           animation: transition-left 0.8s forwards;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  opacity: 0;
 }
 
 main p {
   margin-left: 10px;
   -webkit-animation: transition-left 1.3s forwards;
           animation: transition-left 1.3s forwards;
+}
+
+main .add-todo {
+  width: 100%;
+  height: auto;
+  border: 1px solid #f72585;
+  border-radius: 20px;
+  margin-top: 2em;
+  padding: 0.8em;
+  -webkit-animation: transition-right forwards 1.2s;
+          animation: transition-right forwards 1.2s;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+main .add-todo h2 {
+  font-weight: 100;
+}
+
+main .add-todo i {
+  font-size: x-large;
+  font-weight: 100;
+}
+
+main .add-todo:hover i {
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 @-webkit-keyframes transition-left {
@@ -168,6 +200,32 @@ main p {
   from {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes transition-right {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes transition-right {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
     opacity: 0;
   }
   to {
