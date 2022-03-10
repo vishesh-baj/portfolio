@@ -89,6 +89,15 @@ const displayMovements = (movements) => {
 
 displayMovements(account1.movements);
 
+// ? CALCULATE AND PRINT BALANCE
+
+const calcDisplayBalance = (movements) => {
+  const balance = movements.reduce((cur, mov) => cur + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcDisplayBalance(account1.movements);
+
 // ? CREATE USERNAMES
 
 const createUsernames = (accounts) => {
@@ -105,7 +114,7 @@ const createUsernames = (accounts) => {
 };
 
 createUsernames(accounts);
-console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -121,3 +130,12 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const eoruToUsd = 1.1;
 
 const usd = movements.map((mov) => eoruToUsd * mov);
+
+const deposits = movements.filter((mov) => mov > 0);
+const withdrawls = movements.filter((mov) => mov < 0);
+
+console.log(deposits, withdrawls);
+const balance = movements.reduce((acc, curr, idx, arr) => {
+  return acc + curr;
+}, 0);
+console.log(balance);
