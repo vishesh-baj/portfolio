@@ -98,6 +98,30 @@ const calcDisplayBalance = (movements) => {
 
 calcDisplayBalance(account1.movements);
 
+// ? CREATE SUMMERY
+
+const calcDisplaySummery = (movements) => {
+  const incomes = movements
+    .filter((movement) => movement > 0)
+    .reduce((accumulator, deposit) => accumulator + deposit, 0);
+
+  const outgoings = movements
+    .filter((movement) => movement < 0)
+    .reduce((accumulator, outgoing) => accumulator + Math.abs(outgoing), 0);
+
+  const interest = movements
+    .filter((movement) => movement > 0)
+    .map((deposit) => (deposit * 1.2) / 100)
+    .filter((interest, i, arr) => interest >= 1)
+    .reduce((accumulator, curr) => accumulator + curr, 0);
+
+  labelSumIn.textContent = `${incomes} €`;
+  labelSumOut.textContent = `${outgoings} €`;
+  labelSumInterest.textContent = `${interest} €`;
+};
+
+calcDisplaySummery(account1.movements);
+
 // ? CREATE USERNAMES
 
 const createUsernames = (accounts) => {
