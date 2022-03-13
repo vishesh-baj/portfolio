@@ -170,6 +170,7 @@ btnLogin.addEventListener("click", (e) => {
   }
 });
 
+// ? TRANSFER MONEY
 btnTransfer.addEventListener("click", (e) => {
   e.preventDefault();
   inputTransferTo.value = inputTransferAmount.value = "";
@@ -188,6 +189,24 @@ btnTransfer.addEventListener("click", (e) => {
 
     updateUI(currentAccount);
   }
+});
+
+// ? CLOSE ACCOUNT
+btnClose.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      (account) => account.username === currentAccount.username
+    );
+
+    accounts.splice(index, 1);
+    // Reset UI
+    containerApp.style.opacity = 0;
+  }
+  inputCloseUsername.value = inputClosePin.value = "";
 });
 
 /////////////////////////////////////////////////
