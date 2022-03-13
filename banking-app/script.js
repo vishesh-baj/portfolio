@@ -87,43 +87,35 @@ const displayMovements = (movements) => {
   });
 };
 
-displayMovements(account1.movements);
-
 // ? CALCULATE AND PRINT BALANCE
-
 const calcDisplayBalance = (movements) => {
   const balance = movements.reduce((cur, mov) => cur + mov, 0);
   labelBalance.textContent = `${balance} EUR`;
 };
 
-calcDisplayBalance(account1.movements);
-
 // ? CREATE SUMMERY
-
-const calcDisplaySummery = (movements) => {
-  const incomes = movements
+const calcDisplaySummery = (account) => {
+  const incomes = account.movements
     .filter((movement) => movement > 0)
     .reduce((accumulator, deposit) => accumulator + deposit, 0);
 
-  const outgoings = movements
+  const outgoings = account.movements
     .filter((movement) => movement < 0)
     .reduce((accumulator, outgoing) => accumulator + Math.abs(outgoing), 0);
 
-  const interest = movements
+  const interest = account.movements
     .filter((movement) => movement > 0)
-    .map((deposit) => (deposit * 1.2) / 100)
-    .filter((interest, i, arr) => interest >= 1)
+    .map((deposit) => (deposit * account.interestRate) / 100)
+    .filter((interest) => interest >= 1)
     .reduce((accumulator, curr) => accumulator + curr, 0);
 
+  // ** reflect values in DOM
   labelSumIn.textContent = `${incomes} €`;
   labelSumOut.textContent = `${outgoings} €`;
   labelSumInterest.textContent = `${interest} €`;
 };
 
-calcDisplaySummery(account1.movements);
-
 // ? CREATE USERNAMES
-
 const createUsernames = (accounts) => {
   accounts.forEach((account) => {
     const username = account.owner
@@ -139,6 +131,39 @@ const createUsernames = (accounts) => {
 
 createUsernames(accounts);
 
+// ? EVENT HANDLERS
+let currentAccount;
+
+// ** LOGIN EVENT
+btnLogin.addEventListener("click", (e) => {
+  // ** Prevents page to reload
+  e.preventDefault();
+  currentAccount = accounts.find(
+    (acc) => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and a welcome message
+    labelWelcome.textContent = `Welcome back ${
+      currentAccount.owner.split(" ")[0]
+    }`;
+
+    containerApp.style.opacity = "1";
+
+    // Clear Input Fields
+    inputLoginUsername.value = inputLoginPin.value = "";
+
+    // Display movements
+    displayMovements(currentAccount.movements);
+
+    // Display balance
+    calcDisplayBalance(currentAccount.movements);
+
+    // Display summary
+    calcDisplaySummery(currentAccount);
+  }
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -148,18 +173,3 @@ const currencies = new Map([
   ["EUR", "Euro"],
   ["GBP", "Pound sterling"],
 ]);
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-const eoruToUsd = 1.1;
-
-const usd = movements.map((mov) => eoruToUsd * mov);
-
-const deposits = movements.filter((mov) => mov > 0);
-const withdrawls = movements.filter((mov) => mov < 0);
-
-console.log(deposits, withdrawls);
-const balance = movements.reduce((acc, curr, idx, arr) => {
-  return acc + curr;
-}, 0);
-console.log(balance);
