@@ -64,12 +64,14 @@ const inputClosePin = document.querySelector(".form__input--pin");
 /////////////////////////////////////////////////
 
 // ? DISPLAY MOVEMENTS IN MOVEMENTS CONTAINER
-const displayMovements = (movements) => {
+const displayMovements = (movements, sort = false) => {
   // **reseting the static html in movements container
 
   containerMovements.innerHTML = "";
+
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
   // ** looping through movements array inside the account object and adding html to it
-  movements.forEach((movement, index) => {
+  movs.forEach((movement, index) => {
     // ** checking if type of movement is deposit or withdrawal
     const type = movement > 0 ? "deposit" : "withdrawal";
 
@@ -222,6 +224,15 @@ btnClose.addEventListener("click", (e) => {
     containerApp.style.opacity = 0;
   }
   inputCloseUsername.value = inputClosePin.value = "";
+});
+
+// ? SORTING
+let sorted = false;
+btnSort.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
