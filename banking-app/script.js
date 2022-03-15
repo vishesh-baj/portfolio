@@ -235,12 +235,31 @@ btnSort.addEventListener("click", (e) => {
   sorted = !sorted;
 });
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
+// /////////////////////////////////////////////////
+// /////////////////////////////////////////////////
+// // LECTURES
 
-const currencies = new Map([
-  ["USD", "United States dollar"],
-  ["EUR", "Euro"],
-  ["GBP", "Pound sterling"],
-]);
+// const currencies = new Map([
+//   ["USD", "United States dollar"],
+//   ["EUR", "Euro"],
+//   ["GBP", "Pound sterling"],
+// ]);
+
+// ? programatically creating array
+
+// const x = new Array(7);
+// console.log(x);
+
+// x.fill(1, 3, 5);
+// console.log(x);
+
+// // 7 1s
+// Array.from({ length: 7 }, () => 1);
+// 1-7 in an array
+// Array.from({ length: 7 }, (_, idx) => idx + 1);
+
+// const diceRollsArr = Array.from({ length: 100 }, () =>
+//   Math.trunc(Math.random() * 6 + 1)
+// );
+
+// console.log(diceRollsArr);
