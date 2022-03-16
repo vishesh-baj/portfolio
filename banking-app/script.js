@@ -76,23 +76,32 @@ const inputClosePin = document.querySelector(".form__input--pin");
 /////////////////////////////////////////////////
 
 // ? DISPLAY MOVEMENTS IN MOVEMENTS CONTAINER
-const displayMovements = (movements, sort = false) => {
+const displayMovements = (account, sort = false) => {
   // **reseting the static html in movements container
 
   containerMovements.innerHTML = "";
 
-  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+  const movs = sort
+    ? account.movements.slice().sort((a, b) => a - b)
+    : account.movements;
   // ** looping through movements array inside the account object and adding html to it
+
   movs.forEach((movement, index) => {
     // ** checking if type of movement is deposit or withdrawal
     const type = movement > 0 ? "deposit" : "withdrawal";
+    const date = new Date(account.movementsDates[index]);
+    const _month = date.getMonth() + 1;
+    const _date = date.getDate();
+    const _year = date.getFullYear();
+
+    const dateStr = `${_date}/${_month}/${_year}`;
 
     // ** HTML to be added
     const html = `<div class="movements__row">
           <div class="movements__type movements__type--${type}">${
       index + 1
     } ${type}</div>
-          <div class="movements__date">3 days ago</div>
+          <div class="movements__date">${dateStr}</div>
           <div class="movements__value">${movement}</div>
         </div>`;
 
@@ -116,13 +125,16 @@ const calcDisplaySummery = (account) => {
 
   const outgoings = account.movements
     .filter((movement) => movement < 0)
-    .reduce((accumulator, outgoing) => accumulator + Math.abs(outgoing), 0);
+    .reduce(
+      (accumulator, outgoing) => Math.trunc(accumulator + Math.abs(outgoing)),
+      0
+    );
 
   const interest = account.movements
     .filter((movement) => movement > 0)
     .map((deposit) => (deposit * account.interestRate) / 100)
     .filter((interest) => interest >= 1)
-    .reduce((accumulator, curr) => accumulator + curr, 0);
+    .reduce((accumulator, curr) => Math.trunc(accumulator + curr), 0);
 
   // ** reflect values in DOM
   labelSumIn.textContent = `${incomes} €`;
@@ -133,33 +145,48 @@ const calcDisplaySummery = (account) => {
 // ? CREATE USERNAMES
 const createUsernames = (accounts) => {
   accounts.forEach((account) => {
-    const username = account.owner
+    account.username = account.owner
       .toLowerCase()
       .split(" ")
       .map((name) => {
         return name[0];
       })
       .join("");
-    account.username = username;
   });
+};
+
+const displayDate = () => {
+  const currentDate = new Date();
+  const dateStr = `${currentDate.getDate()}/${
+    currentDate.getMonth() + 1
+  }/${currentDate.getFullYear()}, ${currentDate.getHours()}:${currentDate.getMinutes()}`;
+  labelDate.textContent = dateStr;
 };
 
 // ? UPDATE UI
 const updateUI = (account) => {
   // Display movements
-  displayMovements(account.movements);
+  displayMovements(account);
 
   // Display balance
   calcDisplayBalance(account);
 
   // Display summary
   calcDisplaySummery(account);
+
+  // Display Date
+  displayDate();
 };
 
 createUsernames(accounts);
 
 // ? EVENT HANDLERS
 let currentAccount;
+
+// ! FAKE ALWAYS LOGIN
+currentAccount = account1;
+updateUI(currentAccount);
+containerApp.style.opacity = 1;
 
 // ** LOGIN EVENT
 btnLogin.addEventListener("click", (e) => {
@@ -169,7 +196,7 @@ btnLogin.addEventListener("click", (e) => {
     (acc) => acc.username === inputLoginUsername.value
   );
   console.log(currentAccount);
-  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+  if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and a welcome message
     labelWelcome.textContent = `Welcome back ${
       currentAccount.owner.split(" ")[0]
@@ -188,7 +215,7 @@ btnLogin.addEventListener("click", (e) => {
 btnTransfer.addEventListener("click", (e) => {
   e.preventDefault();
   inputTransferTo.value = inputTransferAmount.value = "";
-  const amount = Number(inputTransferAmount.value);
+  const amount = +inputTransferAmount.value;
   const receiverAcc = accounts.find(
     (acc) => acc.username === inputTransferTo.value
   );
@@ -208,7 +235,7 @@ btnTransfer.addEventListener("click", (e) => {
 // ? GET LOAN
 btnLoan.addEventListener("click", (e) => {
   e.preventDefault();
-  const amount = Number(inputLoanAmount.value);
+  const amount = +inputLoanAmount.value;
   if (
     amount > 0 &&
     currentAccount.movements.some((mov) => mov >= amount * 0.1)
@@ -225,7 +252,7 @@ btnClose.addEventListener("click", (e) => {
   e.preventDefault();
   if (
     inputCloseUsername.value === currentAccount.username &&
-    Number(inputClosePin.value) === currentAccount.pin
+    +inputClosePin.value === currentAccount.pin
   ) {
     const index = accounts.findIndex(
       (account) => account.username === currentAccount.username
@@ -243,10 +270,94 @@ let sorted = false;
 btnSort.addEventListener("click", (e) => {
   e.preventDefault();
 
-  displayMovements(currentAccount.movements, !sorted);
+  displayMovements(currentAccount, !sorted);
   sorted = !sorted;
 });
 
 // /////////////////////////////////////////////////
 // /////////////////////////////////////////////////
 // // LECTURES
+
+//  ? WORKING WITH NUMBERS
+// Conversion short hand
+// console.log(+"23");
+
+// // Parsing
+
+// console.log(Number.parseInt("92px", 10));
+// console.log(Number.parseFloat("0.23px"));
+
+// console.log(Number.isNaN(+"20X"));
+
+// // ** Best way to check if something is a number
+// console.log(Number.isFinite("20"));
+// console.log(Number.isFinite(Infinity));
+
+// // _____________________BIGINT_____________________
+
+// // ? BIG INT
+// const biggestNum = console.log(2 ** 53 - 1);
+// // Maximum number js can represent accurately
+// console.log(Number.MAX_SAFE_INTEGER);
+
+// console.log(393848173498130493284093489043092334234243n);
+// // use only for smaller numbers
+// console.log(BigInt(324234234));
+// // Can do operations with same bigInt values
+// console.log(4893902840932409823094n * 1002100n);
+
+// // ** Cannot mix binInt and other number types
+// const huge = 2093203918230912931n;
+// const num = 23;
+// console.log(huge + BigInt(huge));
+
+// // ? Divisions
+// // ** Returns closest bigInt with no decimal part
+// console.log(10n / 3n); //3n
+
+// _____________________DATES-TIME_____________________
+
+// Create Date
+// const now = new Date();
+// console.log(now);
+
+// console.log(new Date("Mar 15 2022 23:57:43"));
+// // Not good idea, unreliable unless string is created by js
+// console.log(new Date("December 24,2025"));
+
+// //
+// console.log(new Date(account1.movementsDates[0]));
+
+// //  Y/M/DT/HR/MN/SC
+// console.log(new Date(2037, 10, 19, 23, 5));
+
+// console.log(new Date(0));
+// console.log(new Date(3 * 24 * 60 * 60 * 1000));
+
+// DATE METHODS
+
+// const future = new Date(2037, 10, 19, 23);
+// // To get year of date
+// console.log(future.getFullYear());
+// // To get month - 0 based
+// console.log(future.getMonth());
+// // To get Date
+// console.log(future.getDate());
+// // To get Day of week, 0 based
+// console.log(future.getDay());
+
+// // Other methods
+// console.log(future.getHours());
+// console.log(future.getMinutes());
+// console.log(future.getSeconds());
+
+// // nicely formatted string
+// console.log(future.toISOString());
+
+// // Time stamp
+// console.log(future.getTime());
+
+// console.log(new Date(Date.now()));
+
+// future.setFullYear(2040);
+// console.log(future);
