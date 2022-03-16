@@ -228,6 +228,9 @@ btnTransfer.addEventListener("click", (e) => {
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
 
+    // Add transfer date
+    currentAccount.movementsDates.push(new Date().toISOString());
+
     updateUI(currentAccount);
   }
 });
@@ -242,6 +245,9 @@ btnLoan.addEventListener("click", (e) => {
   ) {
     currentAccount.movements.push(amount);
     console.log(currentAccount.movements);
+
+    // Add transfer date
+    currentAccount.movementsDates.push(new Date().toISOString());
     updateUI(currentAccount);
   }
   inputLoanAmount.value = "";
@@ -361,3 +367,10 @@ btnSort.addEventListener("click", (e) => {
 
 // future.setFullYear(2040);
 // console.log(future);
+
+const future = new Date(2037, 10, 19, 23);
+console.log(+future);
+
+const daysPased = (date1, date2) => date2 - (date1 / 1000) * 60 * 60 * 24;
+
+console.log(daysPased(new Date(2037, 10, 19, 23), new Date(2023, 10, 19, 23)));
