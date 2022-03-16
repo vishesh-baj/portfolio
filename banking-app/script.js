@@ -155,12 +155,23 @@ const createUsernames = (accounts) => {
   });
 };
 
-const displayDate = () => {
+const displayDate = (account) => {
   const currentDate = new Date();
-  const dateStr = `${currentDate.getDate()}/${
-    currentDate.getMonth() + 1
-  }/${currentDate.getFullYear()}, ${currentDate.getHours()}:${currentDate.getMinutes()}`;
-  labelDate.textContent = dateStr;
+  // const dateStr = `${currentDate.getDate()}/${
+  //   currentDate.getMonth() + 1
+  // }/${currentDate.getFullYear()}, ${currentDate.getHours()}:${currentDate.getMinutes()}`;
+  const options = {
+    hour: "numeric",
+    minute: "numeric",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    weekday: "long",
+  };
+  // const locale = navigator.language;
+  labelDate.textContent = Intl.DateTimeFormat(account.locale, options).format(
+    currentDate
+  );
 };
 
 // ? UPDATE UI
@@ -175,7 +186,7 @@ const updateUI = (account) => {
   calcDisplaySummery(account);
 
   // Display Date
-  displayDate();
+  displayDate(account);
 };
 
 createUsernames(accounts);
@@ -368,9 +379,9 @@ btnSort.addEventListener("click", (e) => {
 // future.setFullYear(2040);
 // console.log(future);
 
-const future = new Date(2037, 10, 19, 23);
-console.log(+future);
+// const future = new Date(2037, 10, 19, 23);
+// console.log(+future);
 
-const daysPased = (date1, date2) => date2 - (date1 / 1000) * 60 * 60 * 24;
+// const daysPased = (date1, date2) => date2 - (date1 / 1000) * 60 * 60 * 24;
 
-console.log(daysPased(new Date(2037, 10, 19, 23), new Date(2023, 10, 19, 23)));
+// console.log(daysPased(new Date(2037, 10, 19, 23), new Date(2023, 10, 19, 23)));
