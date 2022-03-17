@@ -90,19 +90,26 @@ const displayMovements = (account, sort = false) => {
     // ** checking if type of movement is deposit or withdrawal
     const type = movement > 0 ? "deposit" : "withdrawal";
     const date = new Date(account.movementsDates[index]);
-    const _month = date.getMonth() + 1;
-    const _date = date.getDate();
-    const _year = date.getFullYear();
+    // const _month = date.getMonth() + 1;
+    // const _date = date.getDate();
+    // const _year = date.getFullYear();
 
-    const dateStr = `${_date}/${_month}/${_year}`;
+    // const dateStr = `${_date}/${_month}/${_year}`;
+
+    const formattedMov = new Intl.NumberFormat(account.locale, {
+      style: "currency",
+      currency: account.currency,
+    }).format(movement);
 
     // ** HTML to be added
     const html = `<div class="movements__row">
           <div class="movements__type movements__type--${type}">${
       index + 1
     } ${type}</div>
-          <div class="movements__date">${dateStr}</div>
-          <div class="movements__value">${movement}</div>
+          <div class="movements__date">${Intl.DateTimeFormat(
+            account.locale
+          ).format(date)}</div>
+          <div class="movements__value">${formattedMov}</div>
         </div>`;
 
     // ** Method on movements container to add the html
@@ -114,7 +121,10 @@ const displayMovements = (account, sort = false) => {
 const calcDisplayBalance = (account) => {
   account.balance = account.movements.reduce((cur, mov) => cur + mov, 0);
 
-  labelBalance.textContent = `${account.balance} EUR`;
+  labelBalance.textContent = `${new Intl.NumberFormat(account.balance, {
+    style: "currency",
+    currency: account.currency,
+  }).format(account.balance)}`;
 };
 
 // ? CREATE SUMMERY
@@ -137,9 +147,20 @@ const calcDisplaySummery = (account) => {
     .reduce((accumulator, curr) => Math.trunc(accumulator + curr), 0);
 
   // ** reflect values in DOM
-  labelSumIn.textContent = `${incomes} €`;
-  labelSumOut.textContent = `${outgoings} €`;
-  labelSumInterest.textContent = `${interest} €`;
+  labelSumIn.textContent = `${new Intl.NumberFormat(account.locale, {
+    style: "currency",
+    currency: account.currency,
+  }).format(incomes)}`;
+
+  labelSumOut.textContent = `${new Intl.NumberFormat(account.locale, {
+    style: "currency",
+    currency: account.currency,
+  }).format(outgoings)}`;
+
+  labelSumInterest.textContent = `${new Intl.NumberFormat(account.locale, {
+    style: "currency",
+    currency: account.currency,
+  }).format(interest)}`;
 };
 
 // ? CREATE USERNAMES
@@ -385,3 +406,19 @@ btnSort.addEventListener("click", (e) => {
 // const daysPased = (date1, date2) => date2 - (date1 / 1000) * 60 * 60 * 24;
 
 // console.log(daysPased(new Date(2037, 10, 19, 23), new Date(2023, 10, 19, 23)));
+
+// // ? Internationalization of numbers
+// const num = 123123123.12;
+
+// const options = {
+//   // Percent, Currency, Unit
+//   style: "currency",
+//   // censius, km,m,
+//   // unit: "mile-per-hour",
+//   currency: "INR",
+//   // disable seperation
+//   useGrouping: false,
+// };
+// console.log(Intl.NumberFormat("de-DE", options).format(num));
+
+// ? Timers
