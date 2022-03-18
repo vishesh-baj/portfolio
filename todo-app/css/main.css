@@ -11,6 +11,10 @@
           transform: translateX(0%) !important;
 }
 
+.todo-container-hide {
+  display: none !important;
+}
+
 body {
   background: #dfdfdf;
 }
