@@ -214,26 +214,25 @@ createUsernames(accounts);
 
 //  ? LOGOUT TIMER
 const startLogoutTimer = () => {
-  // ** Set time to 5 minutes
-  let time = 3;
-  // ** Call the timer every second
-  const logoutTimer = setInterval(() => {
+  let time = 10;
+  const tick = () => {
     const min = String(Math.trunc(time / 60)).padStart(2, 0);
     const sec = String(time % 60).padStart(2, 0);
+    // In each call, print remaining time to UI
+    labelTimer.textContent = `${min}:${sec}`;
 
-    // ** each call, print the remaining time to UI
-    labelTimer.textContent = `Remaining Time: ${min}:${sec}`;
-
-    // ** Decrease one second
+    // Decrrease time
     time--;
 
-    // ** When 0 Seconds, stop timer and logout user
     if (time === 0) {
-      clearInterval(logoutTimer);
-      labelWelcome.textContent = "Log in to get started";
-      containerApp.style.opacity = "0";
+      clearInterval(timer);
+      labelWelcome.textContent = `Log in to gegt started`;
+      containerApp.style.opacity = 0;
     }
-  }, 1000);
+  };
+  tick();
+  // Call the timer every second
+  const timer = setInterval(tick, 1000);
 };
 
 // ? EVENT HANDLERS
