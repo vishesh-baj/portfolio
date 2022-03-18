@@ -4,82 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo App</title>
-
-    <!-- google fonts  -->
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- font awesome cdn -->
+
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!-- stylesheets -->
-    <link rel="stylesheet" href="css/main.css" />
-    <!-- script -->
-    <script src="script.js" defer></script>
+    <title>TODO_APP</title>
   </head>
   <body>
-    <!-- navigation start -->
     <nav>
-      <!-- logo -->
-      <div class="logo">
-        <i class="fa-solid fa-seedling"></i>
-      </div>
-      <!-- pallete opening btn -->
-      <div class="pallette-btn">
-        <i class="fa-solid fa-brush"></i>
-      </div>
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="open-menu fa-solid fa-bars"></i>
 
-      <!-- pallette menu -->
-      <div class="pallete-menu">
-        <i class="close-menu-btn fa-solid fa-xmark"></i>
-        <div class="colors-div">
-          <ul>
-            <li>
-              <div id="theme-color-1" class="theme-btn"></div>
-              <span id="theme-name-1" class="theme-color">Theme 1</span>
-            </li>
-            <li>
-              <div id="theme-color-2" class="theme-btn"></div>
-              <span id="theme-name-2" class="theme-color">Theme 1</span>
-            </li>
-            <li>
-              <div id="theme-color-3" class="theme-btn"></div>
-              <span id="theme-name-3" class="theme-color">Theme 1</span>
-            </li>
-            <li>
-              <div id="theme-color-4" class="theme-btn"></div>
-              <span id="theme-name-4" class="theme-color">Theme 1</span>
-            </li>
-            <li>
-              <div id="theme-color-5" class="theme-btn"></div>
-              <span id="theme-name-5" class="theme-color">Theme 1</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <ul class="menu">
+        <li><i id="close-menu" class="fa-solid fa-xmark"></i></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Github</a></li>
+      </ul>
     </nav>
-    <!-- navigation end -->
-
-    <!-- main start -->
-    <main>
-      <h1 class="main-heading">Todo App</h1>
-      <p>Organise tasks efficiently</p>
-
-      <div class="add-todo">
-        <h2>Add Item</h2>
-        <i id="add-item" class="fa-solid fa-plus"></i>
-      </div>
-    </main>
-    <!-- main end -->
   </body>
 </html>
