@@ -214,29 +214,30 @@ createUsernames(accounts);
 
 //  ? LOGOUT TIMER
 const startLogoutTimer = () => {
-  let time = 10;
+  let time = 60 * 5;
   const tick = () => {
     const min = String(Math.trunc(time / 60)).padStart(2, 0);
     const sec = String(time % 60).padStart(2, 0);
     // In each call, print remaining time to UI
     labelTimer.textContent = `${min}:${sec}`;
 
-    // Decrrease time
-    time--;
-
     if (time === 0) {
       clearInterval(timer);
       labelWelcome.textContent = `Log in to gegt started`;
       containerApp.style.opacity = 0;
     }
+    // Decrrease time
+    time--;
   };
   tick();
   // Call the timer every second
   const timer = setInterval(tick, 1000);
+  // To clear the timer
+  return timer;
 };
 
 // ? EVENT HANDLERS
-let currentAccount;
+let currentAccount, timer;
 
 // // ! FAKE ALWAYS LOGIN
 // currentAccount = account1;
@@ -262,7 +263,9 @@ btnLogin.addEventListener("click", (e) => {
     // Clear Input Fields
     inputLoginUsername.value = inputLoginPin.value = "";
 
-    startLogoutTimer();
+    // Timer
+    if (timer) clearInterval(timer);
+    timer = startLogoutTimer();
     updateUI(currentAccount);
   }
 });
