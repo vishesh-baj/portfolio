@@ -60,4 +60,148 @@ nav .menu li {
 nav .menu li a {
   text-decoration: none;
 }
+
+.section--1 {
+  width: 100%;
+  height: calc(100vh - 8vh);
+  background-color: aquamarine;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section--1 .banner {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section--1 .banner h1 {
+  font-size: 5rem;
+}
+
+.section--1 .banner button {
+  padding: 20px 24px;
+  border: none;
+}
+
+.section--1 .banner button a {
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.section--1 .banner a {
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.section--2 {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: cadetblue;
+}
+
+.section--2 .create-todo-btn {
+  padding: 10px 16px;
+  font-size: large;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.section--2 .todo-wrapper {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  margin: 20px;
+  background-color: red;
+}
+
+.section--2 .todo-wrapper .todo {
+  width: 100%;
+  height: auto;
+  background-color: teal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.section--2 .todo-wrapper .todo i {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.section--2 .todo-wrapper .todo input {
+  font-weight: 700;
+  width: 100%;
+  background-color: teal;
+  padding: 10px 14px;
+  color: white;
+  margin: 20px 0px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+}
+
+.section--2 .todo-wrapper .todo input::-webkit-input-placeholder {
+  color: white;
+}
+
+.section--2 .todo-wrapper .todo input:-ms-input-placeholder {
+  color: white;
+}
+
+.section--2 .todo-wrapper .todo input::-ms-input-placeholder {
+  color: white;
+}
+
+.section--2 .todo-wrapper .todo input::placeholder {
+  color: white;
+}
 /*# sourceMappingURL=main.css.map */
