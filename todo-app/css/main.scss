@@ -5,146 +5,101 @@
   font-family: "Montserrat", sans-serif;
 }
 
-// UTILITY CLASSSES
-.sidemenu-toggler {
-  transform: translateX(0%) !important;
-}
-
-.todo-container-hide {
-  display: none !important;
-}
-
-body {
-  background: rgb(223, 223, 223);
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 2em;
-  width: 100%;
-  height: 8vh;
-  align-items: center;
-
-  i {
-    font-size: xx-large;
-    color: teal;
-  }
-
-  .menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 30%;
-    background: gray;
-    transform: translateX(100%);
-
-    transition: all ease-in-out 0.4s;
-
-    #close-menu {
-      float: right;
-    }
-
-    li {
-      list-style-type: none;
-      padding: 20px;
-
-      a {
-        text-decoration: none;
-      }
-    }
-  }
-}
-.section--1 {
-  width: 100%;
-  height: calc(100vh - 8vh);
-  background-color: aquamarine;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .banner {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h1 {
-      font-size: 5rem;
-    }
-    button {
-      padding: 20px 24px;
-      border: none;
-      a {
-        text-decoration: none;
-        font-size: 1rem;
-        border-radius: 10px;
-      }
-    }
-    a {
-      margin-top: 1em;
-      cursor: pointer;
-    }
-  }
-}
-
-.section--2 {
+.wrapper {
   width: 100%;
   height: 100vh;
+  background-color: beige;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1em;
+  gap: 1em;
 
-  background-color: cadetblue;
-
-  .create-todo-btn {
-    padding: 10px 16px;
-    font-size: large;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
+  .app-heading {
+    width: 90vw;
+    text-align: center;
+    h1 {
+      font-size: 3em;
+      font-weight: lighter;
+    }
   }
 
-  .todo-wrapper {
-    width: 100%;
+  .app-container {
+    width: 90vw;
     height: auto;
-    padding: 30px;
-    margin: 20px;
-    background-color: red;
+    background-color: teal;
+    padding: 1em;
+    display: flex;
 
-    .todo {
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       width: 100%;
       height: auto;
-      background-color: teal;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      i {
-        position: absolute;
-        right: 50px;
-        font-size: 24px;
-        color: white;
-        cursor: pointer;
+      background-color: aliceblue;
+      padding: 1em;
+
+      h2 {
+        font-size: 2em;
+        font-weight: lighter;
       }
 
-      input {
-        font-weight: 700;
+      .form {
         width: 100%;
-        background-color: teal;
-        padding: 10px 14px;
-        color: white;
-        margin: 20px 0px;
-        border: none;
-        outline: none;
-        font-size: 24px;
-        &::placeholder {
-          color: white;
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+        input {
+          padding: 8px 16px;
+          outline: none;
+          border: none;
+          width: 25vw;
+        }
+        button {
+          padding: 8px 16px;
+          outline: none;
+          border: none;
+          margin-left: 1em;
+          cursor: pointer;
         }
       }
+    }
+
+    .todos {
+      width: 100%;
+      height: auto;
+      margin-top: 1em;
+      padding: 0.5em;
+
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5em;
+      .todo {
+        width: 100%;
+        height: 10vh;
+        padding: 0px 1em;
+        background-color: azure;
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .options i {
+          padding: 0px 0.5em;
+        }
+      }
+      .todo-container {
+        background-color: lime;
+      }
+    }
+    .notes-container {
+      background-color: aqua;
     }
   }
 }

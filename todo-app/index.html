@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/main.css" />
-    <script src="script.js" defer></script>
+
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- FONT AWESOME CDN -->
 
     <link
       rel="stylesheet"
@@ -20,42 +22,64 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>TODO_APP</title>
+
+    <!-- CSS STYLESHEET -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- SCRIPT FILE -->
+    <script src="script.js" defer></script>
+    <title>Utility App</title>
   </head>
   <body>
-    <!-- NAV START -->
-    <nav>
-      <i class="fa-solid fa-circle-check"></i>
-      <i class="open-menu fa-solid fa-bars"></i>
-
-      <ul class="menu">
-        <li><i id="close-menu" class="fa-solid fa-xmark"></i></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Github</a></li>
-      </ul>
-    </nav>
-    <!-- NAV END -->
-
-    <!-- SECTION START -->
-    <!-- <section class="section section--1">
-      <div class="banner">
-        <h1>TODO APP</h1>
-        <button><a href="#">Know More</a></button>
-        <a href="#sec-2">get started</a>
+    <div class="wrapper">
+      <div class="app-heading">
+        <h1>Utility App</h1>
       </div>
-    </section> -->
-    <!-- SECTION END -->
 
-    <section id="sec-2" class="section--2">
-      <button class="create-todo-btn">create todo</button>
+      <div class="app-container">
+        <div class="container todo-container">
+          <h2>Todo</h2>
+          <form action="" class="todo-form form">
+            <input id="todo-name" placeholder="Create todo" type="text" />
+            <button type="submit">Submit</button>
+          </form>
 
-      <div class="todo-wrapper">
-        <div class="todo">
-          <input class="todo-input" placeholder="TODO NAME" type="text" />
-          <i class="fa-solid fa-circle-check"></i>
+          <div class="todos">
+            <div class="todo">
+              <h3>Get Coffee</h3>
+              <div class="options">
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+            </div>
+
+            <div class="todo">
+              <h3>Get Coffee</h3>
+              <div class="options">
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- NOTES CONTAINER -->
+        <!-- <div class="container notes-container">
+          <h2>Notes</h2>
+          <form action="" class="todo-form form">
+            <input id="todo-name" placeholder="Create notes" type="text" />
+            <button type="submit">Submit</button>
+          </form>
+          <div class="todos">
+            <div class="todo">
+              <h3>Get Coffee</h3>
+              <div class="options">
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+            </div>
+          </div>
+        </div> -->
       </div>
-    </section>
+    </div>
   </body>
 </html>

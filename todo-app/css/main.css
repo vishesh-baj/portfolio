@@ -6,69 +6,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.sidemenu-toggler {
-  -webkit-transform: translateX(0%) !important;
-          transform: translateX(0%) !important;
-}
-
-.todo-container-hide {
-  display: none !important;
-}
-
-body {
-  background: #dfdfdf;
-}
-
-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 2em;
+.wrapper {
   width: 100%;
-  height: 8vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-nav i {
-  font-size: xx-large;
-  color: teal;
-}
-
-nav .menu {
-  position: fixed;
-  top: 0;
-  right: 0;
   height: 100vh;
-  width: 30%;
-  background: gray;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: all ease-in-out 0.4s;
-  transition: all ease-in-out 0.4s;
-}
-
-nav .menu #close-menu {
-  float: right;
-}
-
-nav .menu li {
-  list-style-type: none;
-  padding: 20px;
-}
-
-nav .menu li a {
-  text-decoration: none;
-}
-
-.section--1 {
-  width: 100%;
-  height: calc(100vh - 8vh);
-  background-color: aquamarine;
+  background-color: beige;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,84 +23,106 @@ nav .menu li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1em;
+  gap: 1em;
 }
 
-.section--1 .banner {
+.wrapper .app-heading {
+  width: 90vw;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.section--1 .banner h1 {
-  font-size: 5rem;
+.wrapper .app-heading h1 {
+  font-size: 3em;
+  font-weight: lighter;
 }
 
-.section--1 .banner button {
-  padding: 20px 24px;
-  border: none;
-}
-
-.section--1 .banner button a {
-  text-decoration: none;
-  font-size: 1rem;
-  border-radius: 10px;
-}
-
-.section--1 .banner a {
-  margin-top: 1em;
-  cursor: pointer;
-}
-
-.section--2 {
-  width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: cadetblue;
-}
-
-.section--2 .create-todo-btn {
-  padding: 10px 16px;
-  font-size: large;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.section--2 .todo-wrapper {
-  width: 100%;
-  height: auto;
-  padding: 30px;
-  margin: 20px;
-  background-color: red;
-}
-
-.section--2 .todo-wrapper .todo {
-  width: 100%;
+.wrapper .app-container {
+  width: 90vw;
   height: auto;
   background-color: teal;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .app-container .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: aliceblue;
+  padding: 1em;
+}
+
+.wrapper .app-container .container h2 {
+  font-size: 2em;
+  font-weight: lighter;
+}
+
+.wrapper .app-container .container .form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1em;
+}
+
+.wrapper .app-container .container .form input {
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  width: 25vw;
+}
+
+.wrapper .app-container .container .form button {
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.wrapper .app-container .todos {
+  width: 100%;
+  height: auto;
+  margin-top: 1em;
+  padding: 0.5em;
+  background-color: antiquewhite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5em;
+}
+
+.wrapper .app-container .todos .todo {
+  width: 100%;
+  height: 10vh;
+  padding: 0px 1em;
+  background-color: azure;
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,43 +132,17 @@ nav .menu li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 20px;
-  margin-bottom: 20px;
 }
 
-.section--2 .todo-wrapper .todo i {
-  position: absolute;
-  right: 50px;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
+.wrapper .app-container .todos .todo .options i {
+  padding: 0px 0.5em;
 }
 
-.section--2 .todo-wrapper .todo input {
-  font-weight: 700;
-  width: 100%;
-  background-color: teal;
-  padding: 10px 14px;
-  color: white;
-  margin: 20px 0px;
-  border: none;
-  outline: none;
-  font-size: 24px;
+.wrapper .app-container .todos .todo-container {
+  background-color: lime;
 }
 
-.section--2 .todo-wrapper .todo input::-webkit-input-placeholder {
-  color: white;
-}
-
-.section--2 .todo-wrapper .todo input:-ms-input-placeholder {
-  color: white;
-}
-
-.section--2 .todo-wrapper .todo input::-ms-input-placeholder {
-  color: white;
-}
-
-.section--2 .todo-wrapper .todo input::placeholder {
-  color: white;
+.wrapper .app-container .notes-container {
+  background-color: aqua;
 }
 /*# sourceMappingURL=main.css.map */
