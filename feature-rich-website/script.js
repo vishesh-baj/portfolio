@@ -7,7 +7,10 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
-
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
+const section2 = document.querySelector("#section--2");
+const section3 = document.querySelector("#section--3");
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove("hidden");
@@ -32,13 +35,25 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-// smooth scroll
-const btnScrollTo = document.querySelector(".btn--scroll-to");
-const section1 = document.querySelector("#section--1");
+// ? PAGE NAVIGATION
+document.querySelectorAll(".nav__link").forEach((link, index) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    document
+      .querySelector(`#section--${index + 1}`)
+      .scrollIntoView({ behavior: "smooth" });
+    console.log("LINK");
+  });
+});
+
+// ? SCROLL
 
 btnScrollTo.addEventListener("click", (e) => {
-  // OLD SCHOOL WAY
-  const s1Coords = section1.getBoundingClientRect();
+  // ** MODERN WAY
+  section1.scrollIntoView({ behavior: "smooth" });
+
+  // ** OLD SCHOOL WAY
+  // const s1Coords = section1.getBoundingClientRect();
   // console.log(e.target.getBoundingClientRect());
   // console.log(
   //   `Current Scroll (X/Y) ${(window.pageXOffset, window.pageYOffset)}`
@@ -50,9 +65,6 @@ btnScrollTo.addEventListener("click", (e) => {
   //   top: s1Coords.top + window.pageYOffset,
   //   behavior: "smooth",
   // });
-
-  // MODERN WAY
-  section1.scrollIntoView({ behavior: "smooth" });
 });
 
 // ///////////////////////////////////////////////////////////////////
@@ -143,3 +155,14 @@ btnScrollTo.addEventListener("click", (e) => {
 // logo.classList.remove("c");
 // logo.classList.toggle("c");
 // logo.classList.contains("c");
+
+// ? EVENTS
+
+// const h1 = document.querySelector("h1");
+// h1.addEventListener("mouseenter", function () {
+//   alert("Add Event Listener: Great");
+// });
+// //** Onevent old school way
+// h1.onmouseenter = function () {
+//   alert("Add Event Listener: Greatsss");
+// };
