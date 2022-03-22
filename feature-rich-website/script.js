@@ -9,8 +9,7 @@ const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
 const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
-const section2 = document.querySelector("#section--2");
-const section3 = document.querySelector("#section--3");
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove("hidden");
@@ -36,18 +35,20 @@ document.addEventListener("keydown", function (e) {
 });
 
 // ? PAGE NAVIGATION
-document.querySelectorAll(".nav__link").forEach((link, index) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    document
-      .querySelector(`#section--${index + 1}`)
-      .scrollIntoView({ behavior: "smooth" });
-    console.log("LINK");
-  });
+
+// ** EVENT DELEGATION
+// 1. add event listener to common parent element
+// 2. Determine what element originate the event
+document.querySelector(".nav__links").addEventListener("click", (e) => {
+  e.preventDefault();
+  // Matching strategy
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
 });
 
 // ? SCROLL
-
 btnScrollTo.addEventListener("click", (e) => {
   // ** MODERN WAY
   section1.scrollIntoView({ behavior: "smooth" });
@@ -65,6 +66,31 @@ btnScrollTo.addEventListener("click", (e) => {
   //   top: s1Coords.top + window.pageYOffset,
   //   behavior: "smooth",
   // });
+});
+// ?TABS
+
+const tabs = document.querySelectorAll(".operations__tab");
+const tabContainer = document.querySelector(".operations__tab-container");
+const tabsContent = document.querySelectorAll(".operations__content");
+
+tabContainer.addEventListener("click", (e) => {
+  const clicked = e.target.closest(".operations__tab");
+
+  // ** guard clause
+  if (!clicked) return;
+  // ** Active tab
+  tabs.forEach((tab) => tab.classList.remove("operations__tab--active"));
+  // Active tab content
+  tabsContent.forEach((content) =>
+    content.classList.remove("operations__content--active")
+  );
+  clicked.classList.add("operations__tab--active");
+
+  // ** Active content area
+
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add("operations__content--active");
 });
 
 // ///////////////////////////////////////////////////////////////////
@@ -166,3 +192,27 @@ btnScrollTo.addEventListener("click", (e) => {
 // h1.onmouseenter = function () {
 //   alert("Add Event Listener: Greatsss");
 // };
+
+// ? DOM TRAVERSING
+// const h1 = document.querySelector("h1");
+
+// // Going Downwards: child
+// console.log(h1.querySelectorAll(".highlight"));
+// console.log(h1.childNodes);
+// console.log(h1.children);
+// console.log((h1.firstElementChild.style.color = "white"));
+// console.log((h1.lastElementChild.style.color = "orangered"));
+
+// // Going updards: Parents
+
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
+// // opposite of querryselectorall
+// console.log(
+//   (h1.closest(".header").style.background = "var( --gradient-secondary)")
+// );
+
+// // Going Sideways: siblings
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
+// console.log(h1.parentElement.children);
