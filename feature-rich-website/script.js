@@ -2,14 +2,17 @@
 
 ///////////////////////////////////////
 // Modal window
-
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
 const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
-
+const nav = document.querySelector(".nav");
+const tabs = document.querySelectorAll(".operations__tab");
+const tabContainer = document.querySelector(".operations__tab-container");
+const tabsContent = document.querySelectorAll(".operations__content");
+const header = document.querySelector(".header");
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove("hidden");
@@ -69,10 +72,6 @@ btnScrollTo.addEventListener("click", (e) => {
 });
 // ?TABS
 
-const tabs = document.querySelectorAll(".operations__tab");
-const tabContainer = document.querySelector(".operations__tab-container");
-const tabsContent = document.querySelectorAll(".operations__content");
-
 tabContainer.addEventListener("click", (e) => {
   const clicked = e.target.closest(".operations__tab");
 
@@ -93,6 +92,54 @@ tabContainer.addEventListener("click", (e) => {
     .classList.add("operations__content--active");
 });
 
+// ? MENU FADE ANIMATIONS
+
+const handleHover = (e) => {
+  if (e.target.classList.contains("nav__link")) {
+    const link = e.target;
+    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+    const logo = link.closest(".nav").querySelector("img");
+
+    siblings.forEach((sibling) => {
+      if (sibling !== link) sibling.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+
+// {assing argument in handler}
+nav.addEventListener("mouseover", handleHover.bind(0.5));
+nav.addEventListener("mouseout", handleHover.bind(1));
+
+// ?MAKE NAVIGATION STICKY
+
+// ** normal way
+// const initialCords = section1.getBoundingClientRect();
+// window.addEventListener("scroll", () => {
+//   if (window.scrollY > initialCords.top) {
+//     nav.classList.add("sticky");
+//   } else {
+//     nav.classList.remove("sticky");
+//   }
+// });
+
+// ** observer interaction api way
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+  if (!entry.isIntersecting) {
+    nav.classList.add("sticky");
+  } else nav.classList.remove("sticky");
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: "-90px",
+});
+
+headerObserver.observe(header);
 // ///////////////////////////////////////////////////////////////////
 
 // SELECTING CREATING AND DELETING ELEMENTS
@@ -216,3 +263,19 @@ tabContainer.addEventListener("click", (e) => {
 // console.log(h1.previousElementSibling);
 // console.log(h1.nextElementSibling);
 // console.log(h1.parentElement.children);
+
+// ? INTERSECTION OBSERVER API
+
+// ** this api allows coe to observe changes to which a targegt element intersects another element
+
+// const observerCallback = (entries, observer) => {
+//   entries.forEach((entry) => console.log(entry));
+// };
+
+// const obsOptions = {
+//   // root = null, its a viewport
+//   root: null,
+//   threshold: 0.05,
+// };
+// const observer = new IntersectionObserver(observerCallback, obsOptions);
+// observer.observe(section1);
