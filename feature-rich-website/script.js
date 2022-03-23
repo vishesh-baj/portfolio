@@ -124,7 +124,7 @@ nav.addEventListener("mouseout", handleHover.bind(1));
 // });
 
 // ** observer interaction api way
-
+const navHeight = nav.getBoundingClientRect().height;
 const stickyNav = function (entries) {
   const [entry] = entries;
   console.log(entry);
@@ -136,10 +136,31 @@ const stickyNav = function (entries) {
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,
-  rootMargin: "-90px",
+  rootMargin: `-${navHeight}px`,
 });
 
 headerObserver.observe(header);
+
+// ?ADD ANIMATIONS TO SECTION REVEAL IT
+
+const allSections = document.querySelectorAll(".section");
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+allSections.forEach((section) => {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
+});
+
 // ///////////////////////////////////////////////////////////////////
 
 // SELECTING CREATING AND DELETING ELEMENTS
