@@ -158,7 +158,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 });
 allSections.forEach((section) => {
   sectionObserver.observe(section);
-  section.classList.add("section--hidden");
+  // section.classList.add("section--hidden");
 });
 
 // ? LAZY LOADING IMAGES
@@ -179,6 +179,41 @@ const imgObserver = new IntersectionObserver(loadImg, {
   rootMargin: "200px",
 });
 imgTargets.forEach((img) => imgObserver.observe(img));
+
+// ? SLIDER LOGIC
+const slider = document.querySelector(".slider");
+const slides = document.querySelectorAll(".slide");
+
+const btnLeft = document.querySelector(".slider__btn--left");
+const btnRight = document.querySelector(".slider__btn--right");
+
+let currentSlide = 0;
+const maxSlide = slides.length;
+
+const goToSlide = (slide) => {
+  slides.forEach(
+    (s, idx) => (s.style.transform = `translateX(${100 * (idx - slide)}%)`)
+  );
+};
+goToSlide(0);
+// ** Next slide
+const nextSlide = () => {
+  currentSlide === maxSlide - 1 ? (currentSlide = 0) : currentSlide++;
+
+  goToSlide(currentSlide);
+};
+
+const prevSlide = () => {
+  currentSlide === 0 ? (currentSlide = maxSlide - 1) : currentSlide--;
+  goToSlide(currentSlide);
+};
+
+btnRight.addEventListener("click", nextSlide);
+btnLeft.addEventListener("click", prevSlide);
+
+// slider.style.transform = "scale(0.4) translateX(-300px)";
+// slider.style.overflow = "visible";
+
 // ///////////////////////////////////////////////////////////////////
 
 // SELECTING CREATING AND DELETING ELEMENTS
