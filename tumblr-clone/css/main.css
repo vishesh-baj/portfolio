@@ -1,1 +1,191 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.wrapper header {
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 10vw;
+}
+
+.wrapper header nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper header nav .logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper header nav .logo-container i {
+  color: white;
+  font-size: 45px;
+}
+
+.wrapper header nav .logo-container .logo {
+  color: white;
+  padding-left: 1vh;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.wrapper header nav .links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper header nav .links-container li {
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+.wrapper header nav .links-container li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.wrapper header nav .links-container li a:hover {
+  color: #12cf12;
+}
+
+.wrapper header nav .links-container li .divider {
+  color: white;
+  font-size: 24px;
+}
+
+.wrapper header nav .links-container .profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.wrapper header nav .links-container .profile-container i {
+  font-size: 24px;
+}
+
+.wrapper header nav .links-container .profile-container #arrow {
+  font-size: 12px;
+  padding-left: 1vh;
+}
+
+.wrapper header nav .links-container .profile-container h3 {
+  padding-left: 2vh;
+}
+
+.wrapper header nav .links-container .profile-container:hover {
+  color: #12cf12;
+}
+
+.wrapper header .profile-popup-container {
+  width: 15vw;
+  height: 12vh;
+  background-color: white;
+  position: absolute;
+  right: 10vh;
+  top: 9vh;
+}
+
+.wrapper header .profile-popup-container ul {
+  padding: 20px;
+}
+
+.wrapper header .profile-popup-container ul li {
+  list-style: none;
+  padding: 5px 0px;
+}
+
+.wrapper header .profile-popup-container ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.wrapper header .profile-popup-container ul li a:hover {
+  color: #12cf12;
+}
+
+.wrapper header .profile-popup-container ul #logout-btn a {
+  color: #ececec;
+}
+
+.wrapper header .profile-popup-container ul #logout-btn a:hover {
+  color: #12cf12;
+}
+
+.wrapper main {
+  width: 100%;
+  height: 90vh;
+  background-color: aquamarine;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 20vh;
+}
+
+.wrapper main h1 {
+  font-size: 150px;
+}
+
+.wrapper main #head-1 {
+  float: left;
+}
+
+.wrapper main #head-2 {
+  padding-left: 40vh;
+}
+/*# sourceMappingURL=main.css.map */
