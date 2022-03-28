@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #219ebc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .wrapper-container {
+  margin-top: 5em;
+  text-align: center;
+}
+
+.wrapper .wrapper-container h1 {
+  font-size: 150px;
+  font-weight: 100;
+}
+
+.wrapper .wrapper-container .stop-counter {
+  font-size: 130px;
+  margin-top: 24px;
+  color: #caf0f8;
+}
+
+.wrapper .wrapper-container .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5em;
+}
+
+.wrapper .wrapper-container .button-container .button-wrapper {
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .wrapper-container .button-container .button-wrapper .btn-ctrl {
+  width: 14vw;
+  padding: 14px 16px;
+  border: 2px solid #caf0f8;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #caf0f8;
+  font-size: 1.8em;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.wrapper .wrapper-container .button-container .button-wrapper .btn-ctrl:hover {
+  background-color: #caf0f8;
+  color: #219ebc;
+  border-color: #caf0f8;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=main.css.map */
