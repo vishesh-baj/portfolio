@@ -30,48 +30,12 @@
     <title>Utility App</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="app-heading">
-        <h1>Utility App</h1>
-      </div>
+    <div class="todo-wrapper">
+      <form class="todo-inp">
+        <input placeholder="Add Todo" type="text" name="" id="todo-selection" />
+      </form>
 
-      <div class="app-container">
-        <div class="container todo-container">
-          <h2>Todo</h2>
-          <form class="todo-form form">
-            <input id="todo-name" placeholder="Create todo" type="text" />
-            <button type="submit">Submit</button>
-          </form>
-
-          <div class="todos">
-            <div class="todo">
-              <h3>Get Coffee</h3>
-              <div class="options">
-                <i class="checkced fa-solid fa-check"></i>
-                <i class="delete fa-solid fa-trash-can"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- NOTES CONTAINER -->
-        <!-- <div class="container notes-container">
-          <h2>Notes</h2>
-          <form action="" class="todo-form form">
-            <input id="todo-name" placeholder="Create notes" type="text" />
-            <button type="submit">Submit</button>
-          </form>
-          <div class="todos">
-            <div class="todo">
-              <h3>Get Coffee</h3>
-              <div class="options">
-                <i class="fa-solid fa-check"></i>
-                <i class="fa-solid fa-trash-can"></i>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      </div>
+      <div class="todo-list"></div>
     </div>
   </body>
 </html>

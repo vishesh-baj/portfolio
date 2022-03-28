@@ -5,105 +5,56 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.wrapper {
-  width: 100%;
+body {
+  background-color: black;
   height: 100vh;
-  background-color: beige;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em;
-  gap: 1em;
+}
 
-  .app-heading {
-    width: 90vw;
-    text-align: center;
-    h1 {
-      font-size: 3em;
-      font-weight: lighter;
+.todo-wrapper {
+  width: 100%;
+  height: 80vh;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+
+  .todo-inp {
+    margin-top: 5em;
+
+    #todo-selection {
+      text-align: center;
+      width: 40vh;
+      padding: 20px;
+      &::placeholder {
+        font-size: large;
+      }
     }
   }
 
-  .app-container {
-    width: 90vw;
-    height: auto;
-    background-color: teal;
-    padding: 1em;
-    display: flex;
+  .todo-list {
+    margin: 20px;
+    width: 60%;
+    padding: 20px;
 
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    .todo-item {
       width: 100%;
-      height: auto;
-      background-color: aliceblue;
-      padding: 1em;
-
-      h2 {
-        font-size: 2em;
-        font-weight: lighter;
-      }
-
-      .form {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 1em;
-        input {
-          padding: 8px 16px;
-          outline: none;
-          border: none;
-          width: 25vw;
-        }
-        button {
-          padding: 8px 16px;
-          outline: none;
-          border: none;
-          margin-left: 1em;
-          cursor: pointer;
-        }
-      }
-    }
-
-    .todos {
-      width: 100%;
-      height: auto;
-      margin-top: 1em;
-      padding: 0.5em;
-
-      background-color: antiquewhite;
+      margin: 20px;
       display: flex;
-      justify-content: center;
-      flex-direction: column;
-      overflow-y: scroll;
+      justify-content: space-between;
+      color: white;
 
-      gap: 0.5em;
-      .todo {
-        width: 100%;
-        height: 10vh;
-        padding: 0.5em 1em;
-        background-color: azure;
-        border-radius: 10px;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .options i {
-          padding: 0px 0.5em;
-          cursor: pointer;
-        }
+      button {
+        padding: 20px;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        background-color: teal;
+        cursor: pointer;
       }
-      .todo-container {
-        background-color: lime;
-        overflow-y: scroll;
-      }
-    }
-    .notes-container {
-      background-color: aqua;
     }
   }
 }
