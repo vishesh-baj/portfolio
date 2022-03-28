@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .calc-wrapper {
+  width: 36vw;
+  height: 80vh;
+}
+
+.wrapper .calc-wrapper .input-wrapper #calculation-inp {
+  width: calc(100% - 20px);
+  height: 8vh;
+  font-size: 32px;
+  padding: 24px;
+  outline: none;
+  margin: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.wrapper .calc-wrapper .input-wrapper .operations-wrapper {
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 2vh;
+}
+
+.wrapper .calc-wrapper .input-wrapper .operations-wrapper .operator-btn {
+  width: 7vw;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: aliceblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.wrapper .calc-wrapper .input-wrapper .numbers-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2vh;
+}
+
+.wrapper .calc-wrapper .input-wrapper .numbers-wrapper .equal-to {
+  width: 21vw !important;
+}
+
+.wrapper .calc-wrapper .input-wrapper .numbers-wrapper .numbers-btn {
+  margin: 20px;
+  cursor: pointer;
+  width: 9vw;
+  height: 10vh;
+  background-color: aquamarine;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=main.css.map */
