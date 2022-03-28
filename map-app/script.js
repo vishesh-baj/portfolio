@@ -12,6 +12,7 @@ const inputCadence = document.querySelector(".form__input--cadence");
 const inputElevation = document.querySelector(".form__input--elevation");
 // global vcariables
 let map, mapEvent;
+
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     (position) => {
@@ -71,4 +72,3 @@ inputType.addEventListener("change", (e) => {
   inputElevation.closest(".form__row").classList.toggle("form__row--hidden");
   inputCadence.closest(".form__row").classList.toggle("form__row--hidden");
 });
-
