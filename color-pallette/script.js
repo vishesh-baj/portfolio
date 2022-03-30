@@ -5,7 +5,15 @@ const copyBtn = document.querySelector(".copy-btn");
 const colors = document.querySelectorAll(".color");
 const colorCodes = document.querySelectorAll(".color-code");
 const dots = document.querySelectorAll(".dot");
-let generatedArr;
+const popupAll = document.querySelector(".popup-all");
+let generatedArr = [
+  "#9b5de5",
+  "#f15bb5",
+  "#fee440",
+  "#00bbf9",
+  "#00f5d4",
+  "#ef476f",
+];
 
 // ? generate random color array
 
@@ -55,6 +63,11 @@ const copyColors = () => {
   generatedArr.forEach(
     (color, idx) => (copyTemplate += `Color-${idx + 1}, Tag:${color}\n`)
   );
+
+  setTimeout(() => {
+    popupAll.classList.toggle("hidden");
+  }, 3000);
+  popupAll.classList.toggle("hidden");
 
   navigator.clipboard.writeText(copyTemplate);
 };

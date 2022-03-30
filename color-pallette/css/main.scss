@@ -30,7 +30,7 @@
       color: black;
       font-weight: 100;
       .dot {
-        font-size: 66px;
+        font-size: 100px;
         font-weight: 500;
 
         color: black;
@@ -67,24 +67,24 @@
       }
 
       #color-0 {
-        background-color: violet;
+        background-color: #9b5de5;
         border-top-left-radius: 24px;
         border-bottom-left-radius: 24px;
       }
       #color-1 {
-        background-color: indigo;
+        background-color: #f15bb5;
       }
       #color-2 {
-        background-color: blue;
+        background-color: #fee440;
       }
       #color-3 {
-        background-color: green;
+        background-color: #00bbf9;
       }
       #color-4 {
-        background-color: yellow;
+        background-color: #00f5d4;
       }
       #color-5 {
-        background-color: orange;
+        background-color: #ef476f;
         border-top-right-radius: 24px;
         border-bottom-right-radius: 24px;
       }
@@ -116,4 +116,24 @@
       }
     }
   }
+
+  .popup-all {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    background-color: teal;
+    color: white;
+    position: absolute;
+    right: 20vw;
+    bottom: 8.5vw;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+// animations
+
+.popupAnimaiton {
+  transform: scale(1.1);
+  transition: all ease-in 1s;
 }
