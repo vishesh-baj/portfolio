@@ -64,4 +64,8 @@ colors.forEach((color, idx) => {
   color.addEventListener("mouseout", () => {
     colorCodes[idx].classList.toggle("hidden");
   });
+
+  color.addEventListener("click", () => {
+    navigator.clipboard.writeText(colorCodes[idx].textContent);
+  });
 });
