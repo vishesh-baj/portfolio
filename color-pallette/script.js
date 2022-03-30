@@ -3,7 +3,7 @@
 const randomizeBtn = document.querySelector(".randomize-btn");
 const copyBtn = document.querySelector(".copy-btn");
 const colors = document.querySelectorAll(".color");
-
+const colorCodes = document.querySelectorAll(".color-code");
 let generatedArr;
 
 // ? generate random color array
@@ -29,6 +29,11 @@ const generateColorsArr = () => {
   }
   return colorsArr;
 };
+const reasignCodes = (codesArr) => {
+  colorCodes.forEach((code, idx) => {
+    code.textContent = codesArr[idx];
+  });
+};
 
 const displayColors = () => {
   const colorArr = generateColorsArr();
@@ -36,7 +41,7 @@ const displayColors = () => {
     color.style.backgroundColor = colorArr[idx];
   });
   generatedArr = colorArr;
-
+  reasignCodes(generatedArr);
   return generatedArr;
 };
 
@@ -52,3 +57,11 @@ const copyColors = () => {
 // ** event listeners
 randomizeBtn.addEventListener("click", displayColors);
 copyBtn.addEventListener("click", copyColors);
+colors.forEach((color, idx) => {
+  color.addEventListener("mouseover", () => {
+    colorCodes[idx].classList.toggle("hidden");
+  });
+  color.addEventListener("mouseout", () => {
+    colorCodes[idx].classList.toggle("hidden");
+  });
+});
