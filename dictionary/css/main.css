@@ -77,7 +77,10 @@ body {
   height: auto;
   padding: 2em;
   background-color: teal;
+  border-radius: 20px;
   font-size: small;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
 }
 
 .wrapper .definations-wrapper .defination-container .defination {

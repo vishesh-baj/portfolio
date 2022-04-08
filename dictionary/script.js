@@ -3,6 +3,7 @@
 const form = document.querySelector(".form");
 const searchInput = document.querySelector("#search-inp");
 const definitionsContainer = document.querySelector(".definations-wrapper");
+
 const displayDefinations = (definitions) => {
   definitions.forEach((definition) => {
     const html = `

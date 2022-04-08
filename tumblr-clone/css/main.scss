@@ -126,20 +126,52 @@
   main {
     width: 100%;
     height: 90vh;
-    background-color: aquamarine;
+    background-color: purple;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding: 20vh;
-    h1 {
-      font-size: 150px;
+    align-items: center;
+    .hero-container {
+      width: 60vw;
+
+      #head-1 {
+        margin-right: 20vh;
+      }
+      #head-2 {
+        margin-left: 30vh;
+      }
+      h1 {
+        font-size: 100px;
+        color: lime;
+      }
     }
-    #head-1 {
-      float: left;
+
+    p {
+      text-align: center;
+      margin-top: 2em;
+      color: white;
     }
-    #head-2 {
-      padding-left: 40vh;
+    button {
+      margin-top: 2em;
+      width: 20vw;
+      margin: 1em;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 500px;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: greenyellow;
+        transform: scale(1.1);
+      }
     }
+  }
+
+  footer {
+    width: 100%;
+    height: 60vh;
+    background-color: black;
   }
 }

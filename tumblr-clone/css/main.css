@@ -160,7 +160,7 @@
 .wrapper main {
   width: 100%;
   height: 90vh;
-  background-color: aquamarine;
+  background-color: purple;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,21 +171,55 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding: 20vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.wrapper main h1 {
-  font-size: 150px;
+.wrapper main .hero-container {
+  width: 60vw;
 }
 
-.wrapper main #head-1 {
-  float: left;
+.wrapper main .hero-container #head-1 {
+  margin-right: 20vh;
 }
 
-.wrapper main #head-2 {
-  padding-left: 40vh;
+.wrapper main .hero-container #head-2 {
+  margin-left: 30vh;
+}
+
+.wrapper main .hero-container h1 {
+  font-size: 100px;
+  color: lime;
+}
+
+.wrapper main p {
+  text-align: center;
+  margin-top: 2em;
+  color: white;
+}
+
+.wrapper main button {
+  margin-top: 2em;
+  width: 20vw;
+  margin: 1em;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 500px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.wrapper main button:hover {
+  background-color: greenyellow;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.wrapper footer {
+  width: 100%;
+  height: 60vh;
+  background-color: black;
 }
 /*# sourceMappingURL=main.css.map */

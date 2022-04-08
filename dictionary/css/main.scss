@@ -63,7 +63,9 @@ body {
       height: auto;
       padding: 2em;
       background-color: teal;
+      border-radius: 20px;
       font-size: small;
+      transition: all ease-in-out 0.3s;
       .defination {
         font-weight: 400;
       }
