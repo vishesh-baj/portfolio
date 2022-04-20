@@ -1,68 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
     />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>TODO APP</title>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
   </head>
   <body>
-    <header>
-      <nav class="container flex items-center py-12 px-6 relative">
-        <div class="text-lg sm:text-2xl lg:text-3xl font-bold">
-          TODO <spa class="text-teal-400"> APP</spa>
-        </div>
-        <ul
-          class="flex-1 justify-end gap-12 hidden sm:flex uppercase font-semibold"
-        >
-          <li class="cursor-pointer">Home</li>
-          <li class="cursor-pointer">About</li>
-          <li class="cursor-pointer">Contact</li>
-        </ul>
-        <i
-          id="hamburger"
-          class="text-2xl font-semibold fa-solid fa-bars flex justify-end flex-1 sm:hidden"
-        ></i>
-      </nav>
-    </header>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-    <main class="bg-gray-100">
-      <div
-        class="container h-screen py-12 flex flex-col lg:flex-row gap-12 justify-center items-center"
-      >
-        <div class="flex flex-1 items-center flex-col lg:items-start">
-          <h1 class="text-2xl md:text-3xl lg:text-4xl text-center lg:text-left">
-            Simple Todo App
-          </h1>
-          <p class="text-center lg:text-left px-4 lg:px-0">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-            doloribus accusantium temporibus quidem distinctio vitae.
-          </p>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-          <div class="flex mt-8">
-            <button
-              class="py-2 px-3 bg-teal-500 text-white border-none outline-none rounded transform hover:bg-teal-600 hover:scale-125 transition duration-300 ease-in-out focus:bg-teal-800"
-            >
-              Get Started
-            </button>
-          </div>
-        </div>
-        <div class="flex flex-1 justify-center mb-10 lg:mb-0">
-          <img
-            class="md:w-2/4 lg:w-full w-3/4"
-            src="./images/undraw_to_do_re_jaef.svg"
-            alt=""
-          />
-        </div>
-      </div>
-    </main>
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
