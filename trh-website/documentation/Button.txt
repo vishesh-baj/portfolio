@@ -1,0 +1,12 @@
+Button Component Docs
+path: "./src/components/Button/Button.jsx"
+
+Button components contains 6 props in total
+
+1. Type (Defines type of button)
+2. color {defines text color}
+3. bgColor (Defines background color)
+4. hoverColor (Bg Color on hover)
+5. activeColor (Bgf color on active)
+6. size (Size of button, sm,md,lg)
+
