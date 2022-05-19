@@ -6,7 +6,7 @@ export const PATHS = {
   technology: "/technology",
   team: "/team",
   carrier: "/carrier",
-  contacts: "/contacts",
+  contact: "/contact",
 };
 
 export const OTHER_PATHS = {
