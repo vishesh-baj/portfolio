@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { PATHS } from "../../routes/paths";
 import { AiOutlineMenu } from "react-icons/ai";
 import { GrClose } from "react-icons/gr";
 import { sidebarLinksBuilder } from "../../helpers/objects";
-import NavbarLink from "../NavbarLink";
+import NavbarLink from "./NavbarLink";
+
 const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false);
   return (
@@ -34,7 +35,7 @@ const Navbar = () => {
             className="absolute top-5 right-5 cursor-pointer md:hidden"
             size={20}
           />
-
+          {/* Navigation Links */}
           {sidebarLinksBuilder.map((menuItem) => (
             <NavbarLink
               IsToggledProp={setIsToggled}
