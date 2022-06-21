@@ -1,11 +1,19 @@
 import React from "react";
-import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
+import Main from "./sections/Main";
+import Services from "./sections/Services";
+
 const App = () => {
   return (
-    <div className="mx-auto mt-8">
-      <Sidebar />
-      <h1 className="text-4xl text-center ">Main Content</h1>
-    </div>
+    <>
+      <div className=" font-montserrat w-screen h-screen bg-bgBanner bg-blend-overlay bg-opacity-60 bg-center bg-cover bg-black z-10  ">
+        <Navbar />
+        {/* Main */}
+        <Main />
+        {/* Section Services */}
+        <Services />
+      </div>
+    </>
   );
 };
 
