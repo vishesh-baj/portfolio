@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         bgBanner: "url('/public/assets/banner.jpg')",
+        sectionBanner: "url('/public/assets/section-banner.jpg')",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

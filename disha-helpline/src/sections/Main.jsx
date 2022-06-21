@@ -1,6 +1,7 @@
 import React from "react";
 import { BiPlusMedical } from "react-icons/bi";
 import { BsArrowDown } from "react-icons/bs";
+import { Link } from "react-scroll";
 const Main = () => {
   return (
     <main className="w-screen h-screen backdrop-blur-sm flex flex-col  ">
@@ -20,7 +21,9 @@ const Main = () => {
             Know More
           </button>
         </div>
-        <BsArrowDown className="animate-bounce text-3xl text-white absolute bottom-10  " />
+        <Link to="services" spy={true} smooth={true}>
+          <BsArrowDown className="animate-bounce text-3xl text-white absolute bottom-10  " />
+        </Link>
       </div>
     </main>
   );
