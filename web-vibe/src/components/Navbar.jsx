@@ -68,10 +68,30 @@ const Navbar = () => {
         dragElastic={0.05}
       >
         <MenuBtn onClick={() => setClick(!click)}>Menu</MenuBtn>
-        <MenuItem>Home</MenuItem>
-        <MenuItem>About</MenuItem>
-        <MenuItem>Shop</MenuItem>
-        <MenuItem>New Arrival</MenuItem>
+        <MenuItem
+          whileTap={{ scale: 0.9, y: 0 }}
+          whileHover={{ scale: 1.1, y: -5 }}
+        >
+          Home
+        </MenuItem>
+        <MenuItem
+          whileTap={{ scale: 0.9, y: 0 }}
+          whileHover={{ scale: 1.1, y: -5 }}
+        >
+          About
+        </MenuItem>
+        <MenuItem
+          whileTap={{ scale: 0.9, y: 0 }}
+          whileHover={{ scale: 1.1, y: -5 }}
+        >
+          Shop
+        </MenuItem>
+        <MenuItem
+          whileTap={{ scale: 0.9, y: 0 }}
+          whileHover={{ scale: 1.1, y: -5 }}
+        >
+          New Arrival
+        </MenuItem>
       </MenuItems>
     </NavContainer>
   );
