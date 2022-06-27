@@ -1,7 +1,5 @@
-import React from "react";
 import Navbar from "./components/Navbar";
 import Main from "./sections/Main";
-import Services from "./sections/Services";
 
 const App = () => {
   return (
@@ -10,8 +8,6 @@ const App = () => {
         <Navbar />
         {/* Main */}
         <Main />
-        {/* Section Services */}
-        <Services />
       </div>
     </>
   );

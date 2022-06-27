@@ -4,7 +4,7 @@ import { BsArrowDown } from "react-icons/bs";
 import { Link } from "react-scroll";
 const Main = () => {
   return (
-    <main className="w-screen h-screen backdrop-blur-sm flex flex-col  ">
+    <main className="w-screen h-screen  flex flex-col  ">
       <div className="w-full h-screen flex flex-col gap-5 justify-center items-center ">
         <BiPlusMedical className="text-red-600 text-7xl animate-pulse" />
         <h1 className="text-5xl text-center text-sky-300 ">Disha Help Line</h1>
@@ -22,7 +22,7 @@ const Main = () => {
           </button>
         </div>
         <Link to="services" spy={true} smooth={true}>
-          <BsArrowDown className="animate-bounce text-3xl text-white absolute bottom-10  " />
+          <BsArrowDown className="animate-bounce text-3xl text-white absolute bottom-10 cursor-pointer" />
         </Link>
       </div>
     </main>
