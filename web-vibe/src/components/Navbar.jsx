@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import styled from "styled-components";
+
 const NavContainer = styled(motion.div)`
   width: 100vw;
   z-index: 6;
@@ -96,5 +97,5 @@ const Navbar = () => {
     </NavContainer>
   );
 };
-
 export default Navbar;
+    
