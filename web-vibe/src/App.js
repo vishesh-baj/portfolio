@@ -29,6 +29,7 @@ function App() {
         >
           <AnimatePresence>
             <main data-scroll-container ref={containerRef}>
+              {/* sections */}
               <Home />
               <About />
             </main>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import styled from "styled-components";
 
+// nav container styles
 const NavContainer = styled(motion.div)`
   width: 100vw;
   z-index: 6;
@@ -15,6 +16,7 @@ const NavContainer = styled(motion.div)`
   transition: all ease 0.3s;
 `;
 
+// menu button styles
 const MenuBtn = styled.li`
   background-color: ${(props) => `rgba(${props.theme.textRgba},0.7)`};
   list-style: none;
@@ -35,6 +37,7 @@ const MenuBtn = styled.li`
   cursor: pointer;
 `;
 
+// menu items styles
 const MenuItems = styled(motion.ul)`
   position: relative;
   height: ${(props) => props.theme.navHeight};
@@ -48,6 +51,7 @@ const MenuItems = styled(motion.ul)`
   padding: 0 10rem;
 `;
 
+// menu item styles
 const MenuItem = styled(motion.li)`
   text-transform: uppercase;
   color: ${(props) => props.theme.text};
@@ -98,4 +102,3 @@ const Navbar = () => {
   );
 };
 export default Navbar;
-    

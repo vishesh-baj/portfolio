@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+// container styles
 const Container = styled.div`
   position: absolute;
   top: 1rem;
@@ -30,6 +32,7 @@ const Container = styled.div`
   }
 `;
 
+// text styles
 const Text = styled(motion.span)`
   font-size: ${(props) => props.theme.fontlg};
   color: ${(props) => props.theme.text};

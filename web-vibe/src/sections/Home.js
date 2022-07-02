@@ -4,6 +4,7 @@ import CoverVideo from "../components/CoverVideo";
 import Logo from "../components/Logo";
 import Navbar from "../components/Navbar";
 
+// section styles
 const Section = styled.section`
   position: relative;
   min-height: 100vh;

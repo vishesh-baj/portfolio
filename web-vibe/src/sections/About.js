@@ -3,6 +3,8 @@ import styled from "styled-components";
 import img1 from "../assets/Images/1.webp";
 import img2 from "../assets/Images/2.webp";
 import img3 from "../assets/Images/3.webp";
+
+// section styles
 const Section = styled.section`
   position: relative;
   min-height: 100vh;
@@ -12,6 +14,7 @@ const Section = styled.section`
   margin: 0 auto;
 `;
 
+// title styles
 const Title = styled.h1`
   font-size: ${(props) => props.theme.fontBig};
   font-family: "Kaushan Script";
@@ -23,6 +26,7 @@ const Title = styled.h1`
   z-index: 5;
 `;
 
+// left container styles
 const Left = styled.div`
   width: 50%;
   font-size: ${(props) => props.theme.fontlg};
@@ -32,6 +36,7 @@ const Left = styled.div`
   margin-top: 20%;
 `;
 
+// right container styles
 const Right = styled.div`
   width: 50%;
   position: relative;

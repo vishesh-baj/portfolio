@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import "@fontsource/kaushan-script";
 import "@fontsource/sirin-stencil";
+
+// global styles
 const GlobalStyles = createGlobalStyle`
     *,*::before,*:after {
         margin: 0;

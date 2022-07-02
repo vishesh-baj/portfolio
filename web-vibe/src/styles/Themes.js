@@ -1,4 +1,6 @@
 // Add themes as per your requirement
+
+// dark theme
 export const dark = {
   body: "#202020", // black shade
   text: "#fff",
