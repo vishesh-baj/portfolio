@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import { PATHS } from "../routes/paths";
 const Navbar = ({ children }) => {
   return (
     <div>
@@ -25,15 +26,17 @@ const Navbar = ({ children }) => {
                 </svg>
               </label>
             </div>
-            <div className="flex-1 px-2 mx-2">Utility App</div>
+            <div className="flex-1 px-2 mx-2">
+              <Link to={PATHS.home}>Utility App</Link>
+            </div>
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
                 {/* <!-- Navbar menu content here --> */}
                 <li>
-                  <a href="/">TODO</a>
+                  <Link to={PATHS.todo}>TODO</Link>
                 </li>
                 <li>
-                  <a href="/">NOTES</a>
+                  <Link to={PATHS.notes}>NOTES</Link>
                 </li>
               </ul>
             </div>
@@ -46,10 +49,10 @@ const Navbar = ({ children }) => {
           <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
             {/* <!-- Sidebar content here --> */}
             <li>
-              <a href="/">Sidebar Item 1</a>
+              <Link to={PATHS.todo}>Sidebar Item 1</Link>
             </li>
             <li>
-              <a href="/">Sidebar Item 2</a>
+              <Link to={PATHS.notes}>Sidebar Item 2</Link>
             </li>
           </ul>
         </div>
