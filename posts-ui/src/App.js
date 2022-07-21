@@ -12,7 +12,7 @@ const App = () => {
           id={post.id}
           username={post.userName}
           post={post.postContent}
-          date={post.timestamp.getTime()}
+          date={post.timestamp}
         />
       ))}
       <TextArea />

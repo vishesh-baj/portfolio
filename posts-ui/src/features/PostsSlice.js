@@ -5,19 +5,19 @@ const initialState = [
     id: 1,
     userName: "Vishesh Bajpayee",
     postContent: "I am AWesome person in this world and I am the world",
-    timestamp: new Date(),
+    timestamp: 1607110335663,
   },
   {
     id: 2,
     userName: "Vishesh Cool",
     postContent: "cool coolaiyaaa",
-    timestamp: new Date(),
+    timestamp: 1607113465663,
   },
   {
     id: 1,
     userName: "Vishesh Bajpayee",
     postContent: "bhul bhulaiyaa",
-    timestamp: new Date(),
+    timestamp: 1633333465663,
   },
 ];
 
