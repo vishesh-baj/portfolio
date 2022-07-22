@@ -5,23 +5,32 @@ const initialState = [
     key: "wieudfh12",
     id: 1,
     display: "Vishesh Bajpayee",
-    postContent: "I am AWesome person in this world and I am the world",
+    postContent:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when ",
     timestamp: 1607110335663,
   },
   {
     key: "ewfois33",
     id: 2,
     display: "John Doe",
-    postContent: "cool coolaiyaaa",
-    timestamp: 1607113465663,
+    postContent:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+    timestamp: 1117113465663,
   },
   {
     key: "efoisj32re",
     id: 3,
     display: "Jack Maas",
+    postContent: "Sed ut perspiciatis unde omnis iste natus ",
+    timestamp: 1632343465663,
+  },
+  {
+    key: "efoissdfihuefj32re",
+    id: 4,
+    display: "Zac Dill",
     postContent:
-      "bloresod owijed oqiscje ovjior jfoewjoi jgoiewdjoi wejdoiw ejfowj owe",
-    timestamp: 1633333465663,
+      "aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequa ",
+    timestamp: 1632113465663,
   },
 ];
 

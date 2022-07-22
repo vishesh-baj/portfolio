@@ -10,7 +10,7 @@ const Post = ({ username, post, date }) => {
     curDate.getMonth() + 1
   }/${curDate.getFullYear()} | ${curDate.getHours()}:${curDate.getMinutes()}:${curDate.getSeconds()}`;
   return (
-    <div className="card w-[60vw] h-auto bg-neutral text-neutral-content">
+    <div className="card w-full md:w-[60vw] h-auto bg-neutral text-neutral-content">
       <div className="card-body py-3">
         <div className="flex items-center gap-5">
           <AvatarPlaceholder initials={usernameInitials} />

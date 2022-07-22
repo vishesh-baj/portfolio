@@ -1,3 +1,6 @@
 .rc-textarea {
   width: 60vw;
+  background: transparent;
+  padding: 10px 20px;
+  outline: none;
 }
