@@ -6,17 +6,24 @@ import TextArea from "./components/TextArea";
 const App = () => {
   const posts = useSelector((state) => state.posts);
   return (
-    <Appwrapper>
-      {posts.map((post) => (
-        <Post
-          id={post.id}
-          username={post.userName}
-          post={post.postContent}
-          date={post.timestamp}
-        />
-      ))}
-      <TextArea />
-    </Appwrapper>
+    <div>
+      <Appwrapper>
+        {posts.map((post) => (
+          <Post
+            key={post.id}
+            id={post.id}
+            username={post.display}
+            post={post.postContent}
+            date={post.timestamp}
+          />
+        ))}
+      </Appwrapper>
+      <div className="flex justify-center">
+        <div className="absolute bottom-10">
+          <TextArea />
+        </div>
+      </div>
+    </div>
   );
 };
 export default App;
